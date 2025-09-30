@@ -1,4 +1,5 @@
 # Build
+.vscode
 bin/*
 dist/*
 
