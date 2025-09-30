@@ -29,7 +29,9 @@ Download the latest compiled binaries and put it anywhere in your executable pat
 https://github.com/minamijoyo/myaws/releases
 
 # Configuration
+
 ## Required
+
 MyAWS invokes AWS API call via aws-sdk-go.
 Export environment variables for your AWS credentials:
 
@@ -102,6 +104,7 @@ Usage:
 Available Commands:
   autoscaling Manage autoscaling resources
   completion  Generates shell completion scripts
+  init        Manage initialization
   ec2         Manage EC2 resources
   ec2ri       Manage EC2 Reserved Instance resources
   ecr         Manage ECR resources
@@ -151,4 +154,3 @@ Global Flags:
 # LICENCE
 
 MIT
-
