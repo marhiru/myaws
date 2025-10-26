@@ -17,7 +17,7 @@ func init() {
 func newInitCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "init",
-		Short: "Manage initialization",
+		Short: "Configs initialization",
 		Run: func(cmd *cobra.Command, _ []string) {
 			cmd.Help()
 		},
@@ -38,7 +38,6 @@ func newInitProfileCmd() *cobra.Command {
 	}
 
 	return cmd
-
 }
 
 func runInitProfileCmd(_ *cobra.Command, _ []string) error {
@@ -49,7 +48,7 @@ func runInitProfileCmd(_ *cobra.Command, _ []string) error {
 
 	profileDir := filepath.Join(usr, ".aws")
 	if _, err := os.Stat(profileDir); os.IsNotExist(err) {
-		err = os.MkdirAll(profileDir, 0755)
+		err = os.MkdirAll(profileDir, 0o755)
 		if err != nil {
 			return errors.Wrap(err, "Error creating .aws dir")
 		}
@@ -64,7 +63,7 @@ aws_secret_access_key = XXXXX
 	credentialsFile := filepath.Join(profileDir, "credentials")
 
 	if _, err := os.Stat(credentialsFile); os.IsNotExist(err) {
-		err = os.WriteFile(credentialsFile, []byte(defaultProfile), 0644)
+		err = os.WriteFile(credentialsFile, []byte(defaultProfile), 0o644)
 		if err != nil {
 			return errors.Wrap(err, "Error writing credentials file")
 		}
@@ -97,7 +96,7 @@ func runInitConfigCmd(_ *cobra.Command, _ []string) error {
 		defaultConfig := `profile: default
 region: us-east-1
 `
-		err = os.WriteFile(configFile, []byte(defaultConfig), 0644)
+		err = os.WriteFile(configFile, []byte(defaultConfig), 0o644)
 		if err != nil {
 			return errors.Wrap(err, "Cant find HOME path:")
 		}
