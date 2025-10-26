@@ -17,7 +17,7 @@ func init() {
 func newInitCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "init",
-		Short: "Configs initialization",
+		Short: "Config initialization",
 		Run: func(cmd *cobra.Command, _ []string) {
 			cmd.Help()
 		},
