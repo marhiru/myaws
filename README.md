@@ -104,7 +104,7 @@ Usage:
 Available Commands:
   autoscaling Manage autoscaling resources
   completion  Generates shell completion scripts
-  init        Manage initialization
+  init        Config initialization
   ec2         Manage EC2 resources
   ec2ri       Manage EC2 Reserved Instance resources
   ecr         Manage ECR resources
